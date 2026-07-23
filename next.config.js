@@ -14,7 +14,7 @@ const securityHeaders = [
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: blob: https://*.supabase.co https://img.youtube.com",
       "media-src 'self' https://*.supabase.co",
-      "connect-src 'self' https://*.supabase.co",
+      "connect-src 'self' https://*.supabase.co https://va.vercel-scripts.com",
       "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://*.kuula.co https://my.matterport.com",
       "font-src 'self' data:",
       "worker-src 'self' blob:",
