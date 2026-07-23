@@ -4,6 +4,16 @@
 
 export const SITE_NAME = 'Lotusmirk Aerospace'
 
+// Public registration details for the operating entity. Only the identifiers
+// that are meant to be disclosed publicly live here — CIN is required on
+// official communications under s.12(3)(c) of the Companies Act, and GSTIN
+// is standard practice for B2B trust/invoicing. PAN and the director's DIN
+// are deliberately excluded: those identify Gaurav personally rather than
+// the business, and don't belong on a public marketing site.
+export const LEGAL_NAME = 'Lotusmirk Ventures (OPC) Private Limited'
+export const CIN = 'U74999MH2021OPC361385'
+export const GSTIN = '27AAECL6323J1ZE'
+
 export const NAV_LINKS = [
   { href: '/services', label: 'Capabilities' },
   { href: '/about', label: 'About' },
