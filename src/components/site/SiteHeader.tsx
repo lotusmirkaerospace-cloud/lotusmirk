@@ -23,7 +23,7 @@ export function SiteHeader() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
         <Link href="/" className="flex items-center gap-3">
-          <Image src="/brand/logo-header.png" alt="" width={28} height={28} priority className="shrink-0" />
+          <Image src="/brand/logo-header-white.png" alt="" width={28} height={28} priority className="shrink-0" />
           <span className="text-sm font-medium tracking-widest2 uppercase text-mist-100">
             {SITE_NAME}
           </span>

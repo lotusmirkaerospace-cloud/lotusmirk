@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { SITE_NAME } from '@/lib/site-data'
+import { SITE_NAME, LEGAL_NAME, CIN, GSTIN } from '@/lib/site-data'
 
 export function SiteFooter() {
   const year = new Date().getFullYear()
@@ -33,7 +33,10 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="mt-14 flex flex-col gap-2 border-t border-ink-700 pt-6 text-xs text-mist-400 md:flex-row md:justify-between">
-          <p>&copy; {year} Lotusmirk Ventures (OPC) Private Limited. All rights reserved.</p>
+          <div className="space-y-1">
+            <p>&copy; {year} {LEGAL_NAME}. All rights reserved.</p>
+            <p>CIN: {CIN} &middot; GSTIN: {GSTIN}</p>
+          </div>
           <p>Mumbai, India</p>
         </div>
       </div>
