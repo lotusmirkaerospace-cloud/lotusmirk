@@ -1,0 +1,38 @@
+/** @type {import('next').NextConfig} */
+const securityHeaders = [
+  { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+  { key: 'X-Content-Type-Options', value: 'nosniff' },
+  { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+  { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
+  { key: 'X-DNS-Prefetch-Control', value: 'on' },
+  { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
+  {
+    key: 'Content-Security-Policy',
+    value: [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-inline' https://unpkg.com https://www.youtube.com https://s.ytimg.com",
+      "style-src 'self' 'unsafe-inline'",
+      "img-src 'self' data: blob: https://*.supabase.co https://img.youtube.com",
+      "media-src 'self' https://*.supabase.co",
+      "connect-src 'self' https://*.supabase.co",
+      "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://*.kuula.co https://my.matterport.com",
+      "font-src 'self' data:",
+      "worker-src 'self' blob:",
+    ].join('; '),
+  },
+]
+
+const nextConfig = {
+  reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      { protocol: 'https', hostname: '*.supabase.co' },
+      { protocol: 'https', hostname: 'img.youtube.com' },
+    ],
+  },
+  async headers() {
+    return [{ source: '/:path*', headers: securityHeaders }]
+  },
+}
+
+module.exports = nextConfig
